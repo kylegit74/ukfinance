@@ -630,7 +630,7 @@
   }
 
   // --- Final Submit Validation ---
-  function handleSubmit(event) {
+    function handleSubmit(event) {
     event.preventDefault();
     let valid = true;
 
@@ -653,12 +653,10 @@
     if (company === "") { document.getElementById('errorCompany').classList.remove('hidden'); valid = false; }
 
     if (valid) {
-      // ✅ Show Thank You Step instead of redirect
-      document.getElementById('step2').classList.add('hidden');
-      document.getElementById('thankYouStep').classList.remove('hidden');
+      // ✅ Redirect to thank-you page after successful validation
+      window.location.href = "thank-you.html"; // change URL if needed
     }
   }
-
   // --- Click outside to close ---
   document.getElementById('serviceModal').addEventListener('click', function (e) {
     if (e.target === this) closeModal();
